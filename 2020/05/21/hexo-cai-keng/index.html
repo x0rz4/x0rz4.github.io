@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    132
+                    235
                 </div>
                 
 
@@ -466,13 +466,23 @@
                 <h2 id="0x00前言"><a href="#0x00前言" class="headerlink" title="0x00前言"></a>0x00前言</h2><p>部署在腾讯云上都博客被我手贱重装了服务器，博客数据也全部没了。</p>
 <p>所以我打算使用hexo来搭建博客，实惠不用付出一笔服务器的开支。</p>
 <p>而且静态的博客访问速度快还很安全不用担心服务器被日</p>
-<h2 id="0x01准备工作"><a href="#0x01准备工作" class="headerlink" title="0x01准备工作"></a>0x01准备工作</h2><p>GitHub账号一个</p>
+<h2 id="0x01准备工作"><a href="#0x01准备工作" class="headerlink" title="0x01准备工作"></a>0x01准备工作</h2><p><strong>必须品：</strong></p>
+<p>GitHub账号一个</p>
 <p>Git-2.26.2-64-bit</p>
 <p>node-v12.16.3-x64</p>
-<h2 id="0x02生成SSH钥"><a href="#0x02生成SSH钥" class="headerlink" title="0x02生成SSH钥"></a>0x02生成SSH钥</h2><pre class=" language-shell"><code class="language-shell">$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
-$ ssh-keygen -t rsa
-$ ssh -T git@github.com</code></pre>
+<p><strong>首先创建一个文件夹保存博客文件</strong></p>
+<p><strong>使用node安装hexo</strong></p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> i -g hexo
+<span class="token variable">$hexo</span> init</code></pre>
+<h2 id="0x02生成SSH钥"><a href="#0x02生成SSH钥" class="headerlink" title="0x02生成SSH钥"></a>0x02生成SSH钥</h2><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> config --global user.name <span class="token string">"John Doe"</span>
+$ <span class="token function">git</span> config --global user.email johndoe@example.com
+$ ssh-keygen -t rsa -C <span class="token string">'上面的邮箱'</span>
+$ <span class="token function">ssh</span> -T git@github.com</code></pre>
+<h2 id="0x03添加密钥创建博客库"><a href="#0x03添加密钥创建博客库" class="headerlink" title="0x03添加密钥创建博客库"></a>0x03添加密钥创建博客库</h2><h2 id="0x04创建一篇文章并生成以及部署"><a href="#0x04创建一篇文章并生成以及部署" class="headerlink" title="0x04创建一篇文章并生成以及部署"></a>0x04创建一篇文章并生成以及部署</h2><p>最后执行以下命令就可以部署上传啦，以下 g 是 generate 缩写，d 是 deploy 缩写：</p>
+<pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">'文章标题'</span>
+$ hexo g -d</code></pre>
+<p>参考</p>
+<p><a href="https://segmentfault.com/a/1190000017986794" target="_blank" rel="noopener">https://segmentfault.com/a/1190000017986794</a></p>
 
             </div>
             <hr/>
@@ -721,8 +731,8 @@ $ ssh -T git@github.com</code></pre>
                             0x00前言部署在腾讯云上都博客被我手贱重装了服务器，博客数据也全部没了。
 所以我打算使用hexo来搭建博客，实惠不用付出一笔服务器的开支。
 而且静态的博客访问速度快还很安全不用担心服务器被日
-0x01准备工作GitHub账号一个
-Git-
+0x01准备工作必须品：
+GitHub账号一个
                         
                     </div>
                     <div class="publish-info">
@@ -978,7 +988,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">205</span>&nbsp;字
+                class="white-color">308</span>&nbsp;字
             
             
             
