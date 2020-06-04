@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    266
+                    259
                 </div>
                 
 
@@ -468,17 +468,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="0x00前言"><a href="#0x00前言" class="headerlink" title="0x00前言"></a>0x00前言</h2><p>部署在腾讯云上都博客被我手贱重装了服务器，博客数据也全部没了。</p>
-<p>所以我打算使用hexo来搭建博客，实惠不用付出一笔服务器的开支。</p>
-<p>而且静态的博客访问速度快还很安全不用担心服务器被攻击等问题</p>
+                <h2 id="0x00前言"><a href="#0x00前言" class="headerlink" title="0x00前言"></a>0x00前言</h2><p>部署在腾讯云上都博客被我手贱在重装了服务器，以前博客数据也全部没了。所以我打算使用hexo+GitHub来搭建新博客，不再惧怕数据的丢失。</p>
 <h2 id="0x01准备工作"><a href="#0x01准备工作" class="headerlink" title="0x01准备工作"></a>0x01准备工作</h2><h6 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h6><p>Windows 10 1909</p>
 <h6 id="必须品："><a href="#必须品：" class="headerlink" title="必须品："></a><strong>必须品：</strong></h6><p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>账号一个</p>
 <p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git-2.26.2-64-bit</a></p>
 <p><a href="https://nodejs.org/dist/v12.16.3/node-v12.16.3-x64.msi" target="_blank" rel="noopener">node-v12.16.3-x64</a></p>
-<h6 id="创建一个文件夹保存博客文件"><a href="#创建一个文件夹保存博客文件" class="headerlink" title="创建一个文件夹保存博客文件"></a><strong>创建一个文件夹保存博客文件</strong></h6><h6 id="使用node安装hexo"><a href="#使用node安装hexo" class="headerlink" title="使用node安装hexo"></a><strong>使用node安装hexo</strong></h6><pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> i -g hexo
+<h6 id="创建一个文件夹保存博客文件"><a href="#创建一个文件夹保存博客文件" class="headerlink" title="创建一个文件夹保存博客文件"></a><strong>创建一个文件夹保存博客文件</strong></h6><p>如D:\blog</p>
+<h6 id="使用node安装hexo"><a href="#使用node安装hexo" class="headerlink" title="使用node安装hexo"></a><strong>使用node安装hexo</strong></h6><pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> i -g hexo
 $ hexo init</code></pre>
-<h2 id="0x02生成SSH钥"><a href="#0x02生成SSH钥" class="headerlink" title="0x02生成SSH钥"></a>0x02生成SSH钥</h2><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> config --global user.name <span class="token string">"John Doe"</span>
-$ <span class="token function">git</span> config --global user.email johndoe@example.com
+<h2 id="0x02生成SSH钥"><a href="#0x02生成SSH钥" class="headerlink" title="0x02生成SSH钥"></a>0x02生成SSH钥</h2><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> config --global user.name <span class="token string">"名称"</span>
+$ <span class="token function">git</span> config --global user.email youemai@example.com
 $ ssh-keygen -t rsa -C <span class="token string">'上面的邮箱'</span>
 $ <span class="token function">ssh</span> -T git@github.com</code></pre>
 <p>Windows 默认保存在 C:\Users\user\.ssh 下</p>
@@ -487,10 +486,11 @@ $ <span class="token function">ssh</span> -T git@github.com</code></pre>
 <p><img src="/2020/05/22/hexo-bo-ke-da-jian/image-20200522091546313.png" alt></p>
 <p>新建SSH keys</p>
 <p><img src="/2020/05/22/hexo-bo-ke-da-jian/image-20200522091557787.png" alt></p>
-<h2 id="0x04创建一篇文章并生成以及部署"><a href="#0x04创建一篇文章并生成以及部署" class="headerlink" title="0x04创建一篇文章并生成以及部署"></a>0x04创建一篇文章并生成以及部署</h2><p>最后执行以下命令就可以部署上传啦，以下 g 是 generate 缩写，d 是 deploy 缩写：</p>
+<h2 id="0x04创建一篇文章并生成以及部署"><a href="#0x04创建一篇文章并生成以及部署" class="headerlink" title="0x04创建一篇文章并生成以及部署"></a>0x04创建一篇文章并生成以及部署</h2><p>最后执行以下命令就可以部署上传啦，以下 g 是 generate 缩写作用是<strong>生成文件</strong>，d 是 deploy 缩写作用是<strong>部署</strong>：</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save hexo-deployer-git
 $ hexo new <span class="token string">'文章标题'</span>
 $ hexo g -d</code></pre>
+<p>主页使用：<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">hexo-theme-matery</a></p>
 <p>参考</p>
 <p><a href="https://segmentfault.com/a/1190000017986794" target="_blank" rel="noopener">https://segmentfault.com/a/1190000017986794</a></p>
 
@@ -738,10 +738,10 @@ $ hexo g -d</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            0x00前言部署在腾讯云上都博客被我手贱重装了服务器，博客数据也全部没了。
-所以我打算使用hexo来搭建博客，实惠不用付出一笔服务器的开支。
-而且静态的博客访问速度快还很安全不用担心服务器被攻击等问题
-0x01准备工作环境：Windows 
+                            0x00前言部署在腾讯云上都博客被我手贱在重装了服务器，以前博客数据也全部没了。所以我打算使用hexo+GitHub来搭建新博客，不再惧怕数据的丢失。
+0x01准备工作环境：Windows 10 1909
+必须品：GitHub账号一个
+Gi
                         
                     </div>
                     <div class="publish-info">
@@ -779,7 +779,9 @@ $ hexo g -d</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            Hello World为什么要写这个呢？在进入到编程世界中我们的第一个程序就是Hello World所以还是保留一下作为简介分享下这些这些年的经历和感慨
+在去年参加了HackingDay 广州站之后见识到了许多也认识了不少业内的人。
+在现实
                         
                     </div>
                     <div class="publish-info">
@@ -997,7 +999,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">339</span>&nbsp;字
+                class="white-color">1.3k</span>&nbsp;字
             
             
             
