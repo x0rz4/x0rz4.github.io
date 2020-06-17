@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于, x0rz4 blog">
+    <meta name="keywords" content="Kail Linux 2020.2配置, x0rz4 blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于 | x0rz4 blog</title>
+    <title>Kail Linux 2020.2配置 | x0rz4 blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">about</h1>
+                    <h1 class="description center-align post-title">Kail Linux 2020.2配置</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-22
+                    2020-06-17
                 </div>
                 
 
@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    283
                 </div>
                 
 
@@ -468,7 +468,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>Kail Linux 2020版本开始进行来改版，使用了xfce这个桌面环境，比原来使用的GNOME速度快了不少但是也存在着一些问题。</p>
+<p>在2020版本下因为安全设计不能直接使用root权限去登录，但是大多数情况下还是需要使用root权限的，所以我们需要使用启用root用户的登录权限。</p>
+<h5 id="开启ROOT权限"><a href="#开启ROOT权限" class="headerlink" title="开启ROOT权限"></a>开启ROOT权限</h5><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">passwd</span> root</code></pre>
+<p>输入用户密码去切换root权限<br>输入两次密码确认设置root密码<br>然后注销就可以了登录了</p>
+<h5 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h5><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade</code></pre>
+<h5 id="安装和开启SSH"><a href="#安装和开启SSH" class="headerlink" title="安装和开启SSH"></a>安装和开启SSH</h5><pre class=" language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">ssh</span></code></pre>
+<p>然后改配置： vi /etc/ssh/sshd_config</p>
+<p>1.在文件最面后面添加</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#ssh login config</span>
+PasswordAuthentication <span class="token function">yes</span>
+PermitRootLogin <span class="token function">yes</span></code></pre>
+<p>3.启动SSH服务：</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">service</span> <span class="token function">ssh</span> start</code></pre>
+<p>4.查看SSH服务状态是否正常运行：</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">service</span> <span class="token function">ssh</span> status</code></pre>
+<p>5.系统自动启动ssh ： </p>
+<pre class=" language-bash"><code class="language-bash">update-rc.d <span class="token function">ssh</span> <span class="token function">enable</span> </code></pre>
+<h5 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h5><p>安装中文字体：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> ttf-wqy-zenhei</code></pre>
+<p>命令行输入</p>
+<pre><code>dpkg-reconfigure locales</code></pre><p>选择(使用空格选择)en_US.UTF-8 保存</p>
+<p>然后输入reboot重启即可</p>
+
             </div>
             <hr/>
 
@@ -493,7 +516,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://x0rz4.github.io/about/index.html">https://x0rz4.github.io/about/index.html</a>
+                    <a href="https://x0rz4.github.io/2020/06/17/kail-linux-2020-2-pei-zhi/">https://x0rz4.github.io/2020/06/17/kail-linux-2020-2-pei-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -701,24 +724,25 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/2020/06/17/kail-linux-2020-2-pei-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="about">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Kail Linux 2020.2配置">
                         
-                        <span class="card-title">about</span>
+                        <span class="card-title">Kail Linux 2020.2配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            前言Kail Linux 2020版本开始进行来改版，使用了xfce这个桌面环境，比原来使用的GNOME速度快了不少但是也存在着一些问题。
+在2020版本下因为安全设计不能直接使用root权限去登录，但是大多数情况下还是需要使用root权限
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-17
                             </span>
                         <span class="publish-author">
                             
@@ -736,22 +760,25 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/2020/05/22/hexo-bo-ke-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="about">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="hexo博客搭建">
                         
-                        <span class="card-title">about</span>
+                        <span class="card-title">hexo博客搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            0x00前言部署在腾讯云上都博客被我手贱在重装了服务器，以前博客数据也全部没了。所以我打算使用hexo+GitHub来搭建新博客，不再惧怕数据的丢失。
+0x01准备工作环境：Windows 10 1909
+必须品：GitHub账号一个
+Gi
                         
                     </div>
                     <div class="publish-info">
@@ -766,7 +793,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
